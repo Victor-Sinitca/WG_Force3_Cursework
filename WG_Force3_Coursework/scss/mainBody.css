@@ -1,0 +1,68 @@
+.mainBody {
+  padding-top: 60px;
+  background-image: url("../assets/images/bgimage.svg");
+  background-repeat: no-repeat;
+}
+
+.mainContainer {
+  /*width: 100vw;*/
+  /*max-width: 1200px;*/
+}
+
+.mainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+}
+
+@media screen and (max-device-width: 320px) {
+  .mainNav {
+    height: auto;
+    margin: 0 15px;
+  }
+}
+.mainNav_logo {
+  height: 98px;
+  width: 185px;
+  font-size: 0px;
+  background-image: url("../assets/images/logo.svg");
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-device-width: 320px) {
+  .mainNav_logo {
+    height: 24px;
+    width: 19px;
+    font-size: 0px;
+    background-image: url("../assets/images/LogoAlt.png");
+    background-repeat: no-repeat;
+  }
+}
+.mainNav nav {
+  display: flex;
+  justify-content: end;
+}
+
+.mainNav a {
+  padding: 5px;
+  font-size: 17pt;
+  margin-left: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #cccccc;
+}
+
+@media screen and (max-device-width: 320px) {
+  .mainNav a {
+    font-size: 15pt;
+    margin-left: 0px;
+    white-space: nowrap;
+  }
+}
+.mainNav a:hover, .mainNav a:focus {
+  border-bottom: 5px solid white;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=mainBody.css.map */

@@ -1,0 +1,175 @@
+@import "variableMain";
+
+.headerBody {
+  height: $headerHeight;
+  background-color: $backgroundColor;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content:center;
+
+  @media screen and (max-device-width: $max-device-width) {
+    height: $headerHeightAdapt;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  margin: 0 30px;
+  max-width: $max-width - 60px;
+  min-width: $min-width - 60px;
+  @media screen and (max-device-width: $max-device-width) {
+    height: 40px;
+    margin: 0 15px;
+    min-width:auto;
+  }
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  span {
+    height: 23px;
+    width: 23px;
+    font-size: 0;
+    background-image: url('../assets/images/VectorSmartObject.svg');
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: $fontSizeHeaderH1;
+    margin-left: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: $fontColorHeader;
+    @media screen and (max-device-width: $max-device-width) {
+      font-size: $fontSizeHeaderH1Adapt;
+      margin-left: 4px;
+    }
+  }
+}
+
+.headerNav {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  align-items: end;
+  @media screen and (max-device-width: $max-device-width) {
+    grid-gap: 10px;
+  }
+
+  .wishlist {
+    display: flex;
+    align-items: center;
+    color: $fontColorWhite;
+    font-size: $fontSizeHeader;
+    text-decoration: none;
+
+    &::before {
+      content: "Wishlist ";
+      padding-right: 5px;
+      padding-left: 5px;
+      color: $fontColorHeader;
+
+      @media screen and (max-device-width: $max-device-width) {
+        display: none;
+      }
+    }
+    &:hover::before{
+      color:$fontColorHeaderActive;
+    }
+
+    @media screen and (max-device-width: $max-device-width) {
+      &::after {
+        content: "";
+        display: inline-block;
+
+        height: 14px;
+        width: 16px;
+        margin-left: 5px;
+        background-image: url("../assets/images/valentines-heart.png");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .shopping {
+    display: flex;
+    align-items: center;
+    font-size: $fontSizeHeader;
+    color: $fontColorWhite;
+    text-decoration: none;
+
+    &::before {
+      content: "Shopping cart ";
+      margin-right: 5px;
+      margin-left: 5px;
+      color: $fontColorHeader;
+    }
+    &:hover::before{
+      color:$fontColorHeaderActive;
+    }
+    @media screen and (max-device-width: $max-device-width) {
+      &::before {
+        margin-left: 0px;
+        content: "";
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        background: url("../assets/images/cart.png") no-repeat;
+      }
+    }
+  }
+
+  .account {
+    display: flex;
+    align-items: baseline;
+    span {
+      color: #656565;
+      margin-left: 10px;
+      margin-right: 10px;
+      @media screen and (max-device-width: $max-device-width) {
+        display: none;
+      }
+    }
+
+    .login {
+      color: $fontColorHeader;
+      text-decoration: none;
+      font-size: $fontSizeHeader;
+      &:hover{
+        color:$fontColorHeaderActive;
+      }
+      @media screen and (max-device-width: $max-device-width) {
+        content: "";
+        display: inline-block;
+        font-size: 0;
+        height: 17px;
+        width: 20px;
+        background: url("../assets/images/ico.png") no-repeat top ;
+      }
+    }
+
+    .create {
+      color: $fontColorHeader;
+      text-decoration: none;
+      font-size: $fontSizeHeader;
+      &:hover{
+        color:$fontColorHeaderActive;
+      }
+      @media screen and (max-device-width: $max-device-width) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+

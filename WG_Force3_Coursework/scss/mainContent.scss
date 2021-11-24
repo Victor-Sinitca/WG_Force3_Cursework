@@ -1,0 +1,212 @@
+@import "variableMain";
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-flow: dense;
+  grid-gap: 1px;
+  margin: 0 30px;
+  @media screen and (max-device-width: $max-device-width) {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 0;
+  }
+}
+
+.product {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .imgBG {
+      height: auto;
+      width: 95%;
+    }
+
+    .description {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin-left: 30px;
+      margin-bottom: 30px;
+
+      .description_Product {
+        display: flex;
+        align-items: center;
+
+        .description_flag {
+          height: 14px;
+          width: 21px;
+          font-size: 0px;
+          margin-right: 10px;
+          background: url("../assets/images/Layer41.svg") no-repeat;
+        }
+
+        .description_typ {
+          height: 12px;
+          width: 10px;
+          font-size: 0px;
+          margin-right: 10px;
+          background: url("../assets/images/Shape4copy3.svg") no-repeat;
+        }
+
+        & h2 {
+          font-size: $fontSizeDescription_Product;
+          color: $fontColorDescription_Product;
+          font-weight: normal;
+          margin-bottom: 15px;
+          @media screen and (max-device-width: $max-device-width) {
+            font-size: $fontSizeDescription_ProductAdapt;
+          }
+        }
+      }
+
+      .description_price {
+        display: block;
+        font-size: $fontSizeDescription_price;
+        color: #d1b482;
+        @media screen and (max-device-width: $max-device-width) {
+          margin-left: 0;
+          font-size: $fontSizeDescription_priceAdapt;
+        }
+      }
+
+      @media screen and (max-device-width: $max-device-width) {
+        margin-left: 15px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .description_button {
+    height: 39px;
+    width: 100px;
+    margin: 15px;
+    position: absolute;
+    bottom: -54px;
+    text-transform: uppercase;
+    color: $fontColorWhite;
+    border: none;
+    font-size: $fontSizeButtonPurchase;
+    cursor: pointer;
+    background-color: $colorButtonPurchase;
+
+    &:hover {
+      border: 1px solid $colorBorderButtonPurchase;
+    }
+  }
+
+  .like {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 37px;
+    height: 33px;
+    border: none;
+    font-size: 0px;
+    cursor: pointer;
+    @media screen and (max-device-width: $max-device-width) {
+      transform: scale(0.7);
+    }
+
+  }
+
+  .likeActive {
+    background: url("../assets/images/heart.svg") no-repeat center;
+    @media (hover: hover) {
+      &:hover {
+        animation: heartRemove 1.5s infinite ease-in-out;
+        transform-origin: center bottom;
+      }
+    }
+  }
+
+  .likeNotActive {
+    background: url("../assets/images/heartB.svg") no-repeat;
+    @media (hover: hover) {
+      &:hover {
+        animation: heartAdd 1.5s infinite ease-in-out;
+      }
+    }
+  }
+
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+
+      .imgBG {
+        opacity: 0.5;
+      }
+
+      .description_button {
+        bottom: 0;
+      }
+
+      .description {
+        bottom: 37px;
+      }
+    }
+  }
+}
+
+@keyframes heartAdd {
+  25% {
+    transform: scale(1.2)
+  }
+  75% {
+    transform: scale(0.9)
+  }
+}
+
+@keyframes heartRemove {
+  10% {
+    transform: rotate (-30deg)
+  }
+  30% {
+    transform: rotate(+30deg)
+  }
+  50% {
+    transform: rotate(-30deg)
+  }
+  60% {
+    transform: rotate(0deg)
+  }
+  80% {
+    transform: scale(0.8)
+  }
+  100% {
+    transform: scale(1)
+  }
+}
+
+
+//стиль устанавливается для анимации покупки продукта в addWishlist.js
+.productMoveStyle {
+  position: fixed;
+  opacity:1;
+  transition: transform 1.5s, opacity 3s;
+  z-index: 2;
+
+  &.disabled {
+    pointer-events: none;
+  }
+  &.a.disabled {
+    pointer-events: none;
+  }
+ /* &:hover .imgBG {
+    opacity: 1;
+  }*/
+}
+
+
