@@ -21,7 +21,7 @@
   width: 100%;
   margin: 0 30px;
   max-width: 1200px;
-  min-width: 680px;
+  min-width: 540px;
 }
 @media screen and (max-device-width: 425px) {
   .headerContainer {
@@ -185,8 +185,9 @@
 }
 
 .mainContainer {
+  display: block;
   max-width: 1260px;
-  min-width: 740px;
+  min-width: 600px;
   margin: 0 auto;
 }
 .mainContainer .mainNav {
@@ -206,11 +207,11 @@
 }
 .mainContainer .mainNav .mainNav_logo {
   align-self: start;
-  display: block;
+  /* display: block;*/
   height: 98px;
   width: 185px;
   font-size: 0px;
-  background: url("../assets/images/logo.svg") no-repeat;
+  background: url("../assets/images/logo.svg");
 }
 @media screen and (max-device-width: 425px) {
   .mainContainer .mainNav .mainNav_logo {
@@ -221,9 +222,10 @@
 }
 .mainContainer .mainNav nav {
   display: flex;
+  flex-grow: 1;
   justify-content: end;
   flex-wrap: wrap;
-  margin-left: -50px;
+  /*margin-left: -50px;*/
 }
 .mainContainer .mainNav nav a {
   padding: 0px 5px 5px 5px;

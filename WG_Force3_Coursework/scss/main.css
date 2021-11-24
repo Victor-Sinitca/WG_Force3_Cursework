@@ -21,7 +21,7 @@
   width: 100%;
   margin: 0 30px;
   max-width: 1200px;
-  min-width: 680px;
+  min-width: 540px;
 }
 @media screen and (max-device-width: 425px) {
   .headerContainer {
@@ -185,8 +185,9 @@
 }
 
 .mainContainer {
+  display: block;
   max-width: 1260px;
-  min-width: 740px;
+  min-width: 600px;
   margin: 0 auto;
 }
 .mainContainer .mainNav {
@@ -206,11 +207,11 @@
 }
 .mainContainer .mainNav .mainNav_logo {
   align-self: start;
-  display: block;
+  /* display: block;*/
   height: 98px;
   width: 185px;
   font-size: 0px;
-  background: url("../assets/images/logo.svg") no-repeat;
+  background: url("../assets/images/logo.svg");
 }
 @media screen and (max-device-width: 425px) {
   .mainContainer .mainNav .mainNav_logo {
@@ -221,9 +222,10 @@
 }
 .mainContainer .mainNav nav {
   display: flex;
+  flex-grow: 1;
   justify-content: end;
   flex-wrap: wrap;
-  margin-left: -50px;
+  /*margin-left: -50px;*/
 }
 .mainContainer .mainNav nav a {
   padding: 0px 5px 5px 5px;
@@ -304,18 +306,72 @@
   align-items: center;
 }
 .product a .description .description_Product .description_flag {
-  height: 14px;
-  width: 21px;
+  height: 13px;
+  width: 20px;
   font-size: 0px;
   margin-right: 10px;
-  background: url("../assets/images/Layer41.svg") no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=china] {
+  background: url("../assets/images/country/filter-china.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=poland] {
+  background: url("../assets/images/country/filter-poland.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=czech] {
+  background: url("../assets/images/country/filter-czech.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=france] {
+  background: url("../assets/images/country/filter-france.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=germany] {
+  background: url("../assets/images/country/filter-germany.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=italy] {
+  background: url("../assets/images/country/filter-italy.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=japan] {
+  background: url("../assets/images/country/filter-japan.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=sweden] {
+  background: url("../assets/images/country/filter-sweden.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=uk] {
+  background: url("../assets/images/country/filter-uk.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=usa] {
+  background: url("../assets/images/country/filter-usa.png") center/cover no-repeat;
+}
+.product a .description .description_Product .description_flag[data-country=ussr] {
+  background: url("../assets/images/country/filter-ussr.png") center/cover no-repeat;
 }
 .product a .description .description_Product .description_typ {
-  height: 12px;
-  width: 10px;
   font-size: 0px;
   margin-right: 10px;
-  background: url("../assets/images/Shape4copy3.svg") no-repeat;
+}
+.product a .description .description_Product .description_typ[data-type=AT-SPG] {
+  height: 10px;
+  width: 12px;
+  background: url("../assets/images/vehicleType/AT-SPG.svg") center/cover no-repeat;
+}
+.product a .description .description_Product .description_typ[data-type=heavyTank] {
+  height: 18px;
+  width: 15px;
+  background: url("../assets/images/vehicleType/heavyTank.svg") center/cover no-repeat;
+}
+.product a .description .description_Product .description_typ[data-type=lightTank] {
+  height: 13px;
+  width: 11px;
+  background: url("../assets/images/vehicleType/lightTank.svg") center/cover no-repeat;
+}
+.product a .description .description_Product .description_typ[data-type=mediumTank] {
+  height: 15px;
+  width: 12px;
+  background: url("../assets/images/vehicleType/mediumTank.svg") center/cover no-repeat;
+}
+.product a .description .description_Product .description_typ[data-type=SPG] {
+  height: 8px;
+  width: 8px;
+  background: url("../assets/images/vehicleType/SPG.svg") center/cover no-repeat;
 }
 .product a .description .description_Product h2 {
   font-size: 15px;

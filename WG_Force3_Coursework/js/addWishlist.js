@@ -1,12 +1,14 @@
 import {moveProduct} from "./moveProduct"
 
+const country = ["china", "czech", "france", "germany", "italy", "japan", "poland", "sweden", "uk", "usa", "ussr"]
+const type = ["AT-SPG", "heavyTank", "lightTank", "mediumTank", "SPG"]
 const productData = [
     {
         productDescription: {
             span: "1",
             name: "ИС-64",
-            type: "танк",
-            country: "СССР",
+            type: "AT-SPG",
+            country: "china",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -16,8 +18,8 @@ const productData = [
         productDescription: {
             span: "2",
             name: "ИС-6",
-            type: "",
-            country: "",
+            type: "heavyTank",
+            country: "czech",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -26,9 +28,9 @@ const productData = [
     {
         productDescription: {
             span: "2",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-62",
+            type: "lightTank",
+            country: "france",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -37,9 +39,9 @@ const productData = [
     {
         productDescription: {
             span: "2",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-63",
+            type: "mediumTank",
+            country: "germany",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -48,9 +50,9 @@ const productData = [
     {
         productDescription: {
             span: "2",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-64",
+            type: "SPG",
+            country: "italy",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -59,9 +61,9 @@ const productData = [
     {
         productDescription: {
             span: "1",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-65",
+            type: "SPG",
+            country: "japan",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -70,9 +72,9 @@ const productData = [
     {
         productDescription: {
             span: "1",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-66",
+            type: "mediumTank",
+            country: "poland",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -81,9 +83,9 @@ const productData = [
     {
         productDescription: {
             span: "1",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-67",
+            type: "mediumTank",
+            country: "sweden",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -93,9 +95,9 @@ const productData = [
     {
         productDescription: {
             span: "1",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-68",
+            type: "mediumTank",
+            country: "uk",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -105,9 +107,9 @@ const productData = [
     {
         productDescription: {
             span: "1",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-69",
+            type: "mediumTank",
+            country: "usa",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -117,9 +119,9 @@ const productData = [
     {
         productDescription: {
             span: "1",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-655",
+            type: "mediumTank",
+            country: "ussr",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -130,8 +132,8 @@ const productData = [
         productDescription: {
             span: "1",
             name: "ИС-6",
-            type: "",
-            country: "",
+            type: "mediumTank",
+            country: "ussr",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -141,9 +143,9 @@ const productData = [
     {
         productDescription: {
             span: "1",
-            name: "ИС-6",
-            type: "",
-            country: "",
+            name: "ИС-64",
+            type: "mediumTank",
+            country: "ussr",
         },
         productImage: "https://ru-wotp.wgcdn.co/dcont/fb/image/r165_object_703_ii_1300_big_1.png",
         productCost: "$ 58.99",
@@ -235,8 +237,12 @@ class Wishlist {
                     <img class="imgBG" src="assets/images/Layer40.svg" alt="Танк">
                     <div class="description">
                         <div class="description_Product">
-                            <span class="description_flag">${productData.productDescription.country}</span>
-                            <span class="description_typ">${productData.productDescription.type}</span>
+                            <span class="description_flag" data-country="${productData.productDescription.country}">
+                                    ${productData.productDescription.country}
+                            </span>
+                            <span class="description_typ" data-type="${productData.productDescription.type}">
+                                    ${productData.productDescription.type}
+                            </span>
                             <h2>${productData.productDescription.name}</h2>
                         </div>
                         <span class="description_price">$ 58.99</span>
