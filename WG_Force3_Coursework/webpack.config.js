@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 
 const src = resolve(__dirname, 'src')
+const isDev = process.argv[process.argv.indexOf('--mode') + 1] === 'development'
 
 module.exports = {
   entry: {
@@ -43,13 +44,13 @@ module.exports = {
       filename: 'index.html',
       template: resolve(src, 'pages/main', 'main.html'),
       chunks: ['index'],
-      minify: true
+      minify: !isDev
     }),
     new HTMLWebpackPlugin({
       filename: 'item.html',
       template: resolve(src, 'pages/item', 'item.html'),
       chunks: ['item'],
-      minify: true
+      minify: !isDev
     }),
     new MiniCSSExtractPlugin({
       filename: '[name].css'
@@ -71,19 +72,14 @@ module.exports = {
       {
         test: /\.(c|sc)ss$/,
         use: [
-          MiniCSSExtractPlugin.loader,
+          isDev ? 'style-loader' : MiniCSSExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               sourceMap: true,
             },
           },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
+          'sass-loader',
         ],
       },
       {
@@ -102,7 +98,5 @@ module.exports = {
       }
     ]
   }
-
-
 
 }
