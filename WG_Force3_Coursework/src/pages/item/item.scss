@@ -1,0 +1,10 @@
+@import '~@sections/header/header';
+@import '~@sections/body/body';
+@import '~@organisms/item-content/item-content';
+
+body{
+  background-color: #1c1b15;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #cccccc;
+  margin: 0 auto;
+}

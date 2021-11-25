@@ -1,0 +1,173 @@
+@use '~@scss-vars/colors' as c;
+@use '~@scss-vars/sizes' as s;
+
+.headerBody {
+  height: s.$headerHeight;
+  background-color: c.$backgroundColor;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content:center;
+
+  @media screen and (max-device-width: s.$max-device-width) {
+    height: s.$headerHeightAdapt;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  margin: 0 30px;
+  max-width: s.$max-width - 60px;
+  min-width: s.$min-width - 60px;
+  @media screen and (max-device-width: s.$max-device-width) {
+    height: 40px;
+    margin: 0 15px;
+    min-width:auto;
+  }
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  span {
+    height: 23px;
+    width: 23px;
+    font-size: 0;
+    background-image: url('~@images/VectorSmartObject.svg');
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    font-size: s.$fontSizeHeaderH1;
+    margin-left: 12px;
+    font-weight: normal;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: c.$fontColorHeader;
+    @media screen and (max-device-width: s.$max-device-width) {
+      font-size: s.$fontSizeHeaderH1Adapt;
+      margin-left: 4px;
+    }
+  }
+}
+
+.headerNav {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  align-items: end;
+  @media screen and (max-device-width: s.$max-device-width) {
+    grid-gap: 10px;
+  }
+
+  .wishlist {
+    display: flex;
+    align-items: center;
+    color: c.$fontColorWhite;
+    font-size: s.$fontSizeHeader;
+    text-decoration: none;
+
+    &::before {
+      content: "Wishlist ";
+      padding-right: 5px;
+      padding-left: 5px;
+      color: c.$fontColorHeader;
+
+      @media screen and (max-device-width: s.$max-device-width) {
+        display: none;
+      }
+    }
+    &:hover::before{
+      color: c.$fontColorHeaderActive;
+    }
+
+    @media screen and (max-device-width: s.$max-device-width) {
+      &::after {
+        content: "";
+        display: inline-block;
+
+        height: 14px;
+        width: 16px;
+        margin-left: 5px;
+        background-image: url("~@images/valentines-heart.png");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .shopping {
+    display: flex;
+    align-items: center;
+    font-size: s.$fontSizeHeader;
+    color: c.$fontColorWhite;
+    text-decoration: none;
+
+    &::before {
+      content: "Shopping cart ";
+      margin-right: 5px;
+      margin-left: 5px;
+      color: c.$fontColorHeader;
+    }
+    &:hover::before{
+      color: c.$fontColorHeaderActive;
+    }
+    @media screen and (max-device-width: s.$max-device-width) {
+      &::before {
+        margin-left: 0;
+        content: "";
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        background: url("~@images/cart.png") no-repeat;
+      }
+    }
+  }
+
+  .account {
+    display: flex;
+    align-items: baseline;
+    span {
+      color: #656565;
+      margin-left: 10px;
+      margin-right: 10px;
+      @media screen and (max-device-width: s.$max-device-width) {
+        display: none;
+      }
+    }
+
+    .login {
+      color: c.$fontColorHeader;
+      text-decoration: none;
+      font-size: s.$fontSizeHeader;
+      &:hover{
+        color: c.$fontColorHeaderActive;
+      }
+      @media screen and (max-device-width: s.$max-device-width) {
+        content: "";
+        display: inline-block;
+        font-size: 0;
+        height: 17px;
+        width: 20px;
+        background: url("~@images/ico.png") no-repeat top ;
+      }
+    }
+
+    .create {
+      color: c.$fontColorHeader;
+      text-decoration: none;
+      font-size: s.$fontSizeHeader;
+      &:hover{
+        color: c.$fontColorHeaderActive;
+      }
+      @media screen and (max-device-width: s.$max-device-width) {
+        display: none;
+      }
+    }
+  }
+}

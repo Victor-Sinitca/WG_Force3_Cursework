@@ -1,4 +1,5 @@
-@import "variableMain";
+@use '~@scss-vars/colors' as c;
+@use '~@scss-vars/sizes' as s;
 
 .mainContent {
   display: grid;
@@ -6,7 +7,7 @@
   grid-auto-flow: dense;
   grid-gap: 1px;
   margin: 0 30px;
-  @media screen and (max-device-width: $max-device-width) {
+  @media screen and (max-device-width: s.$max-device-width) {
     grid-template-columns: 1fr 1fr;
     margin: 0 0;
   }
@@ -47,97 +48,97 @@
         .description_flag {
           height: 13px;
           width: 20px;
-          font-size: 0px;
+          font-size: 0;
           margin-right: 10px;
-          &[data-country="china"]{
-            background: url("../assets/images/country/filter-china.png") center/cover no-repeat ;
+          &[data-country='china']{
+            background: url('~@countries/filter-china.png') center/cover no-repeat ;
           }
-          &[data-country="poland"]{
-            background: url("../assets/images/country/filter-poland.png") center/cover no-repeat ;
+          &[data-country='poland']{
+            background: url('~@countries/filter-poland.png') center/cover no-repeat ;
           }
-          &[data-country="czech"]{
-            background: url("../assets/images/country/filter-czech.png") center/cover no-repeat;
+          &[data-country='czech']{
+            background: url('~@countries/filter-czech.png') center/cover no-repeat;
           }
-          &[data-country="france"]{
-            background: url("../assets/images/country/filter-france.png") center/cover no-repeat;
+          &[data-country='france']{
+            background: url('~@countries/filter-france.png') center/cover no-repeat;
           }
-          &[data-country="germany"]{
-            background: url("../assets/images/country/filter-germany.png") center/cover no-repeat;
+          &[data-country='germany']{
+            background: url('~@countries/filter-germany.png') center/cover no-repeat;
           }
-          &[data-country="italy"]{
-            background: url("../assets/images/country/filter-italy.png") center/cover no-repeat;
+          &[data-country='italy']{
+            background: url('~@countries/filter-italy.png') center/cover no-repeat;
           }
-          &[data-country="japan"]{
-            background: url("../assets/images/country/filter-japan.png") center/cover no-repeat;
+          &[data-country='japan']{
+            background: url('~@countries/filter-japan.png') center/cover no-repeat;
           }
-          &[data-country="sweden"]{
-            background: url("../assets/images/country/filter-sweden.png") center/cover no-repeat;
+          &[data-country='sweden']{
+            background: url('~@countries/filter-sweden.png') center/cover no-repeat;
           }
-          &[data-country="uk"]{
-            background: url("../assets/images/country/filter-uk.png") center/cover no-repeat;
+          &[data-country='uk']{
+            background: url('~@countries/filter-uk.png') center/cover no-repeat;
           }
-          &[data-country="usa"]{
-            background: url("../assets/images/country/filter-usa.png") center/cover no-repeat;
+          &[data-country='usa']{
+            background: url('~@countries/filter-usa.png') center/cover no-repeat;
           }
-          &[data-country="ussr"]{
-            background: url("../assets/images/country/filter-ussr.png") center/cover no-repeat;
+          &[data-country='ussr']{
+            background: url('~@countries/filter-ussr.png') center/cover no-repeat;
           }
         }
 
         .description_typ {
-          font-size: 0px;
+          font-size: 0;
           margin-right: 10px;
 
-          &[data-type="AT-SPG"]{
+          &[data-type='AT-SPG']{
             height: 10px;
             width: 12px;
-            background: url("../assets/images/vehicleType/AT-SPG.svg") center/cover no-repeat ;
+            background: url('~@vehicle-type/AT-SPG.svg') center/cover no-repeat ;
           }
-          &[data-type="heavyTank"]{
+          &[data-type='heavyTank']{
             height: 18px;
             width: 15px;
-            background: url("../assets/images/vehicleType/heavyTank.svg") center/cover no-repeat ;
+            background: url('~@vehicle-type/heavyTank.svg') center/cover no-repeat ;
           }
-          &[data-type="lightTank"]{
+          &[data-type='lightTank']{
             height: 13px;
             width: 11px;
-            background: url("../assets/images/vehicleType/lightTank.svg") center/cover no-repeat ;
+            background: url('~@vehicle-type/lightTank.svg') center/cover no-repeat ;
           }
-          &[data-type="mediumTank"]{
+          &[data-type='mediumTank']{
             height: 15px;
             width: 12px;
-            background: url("../assets/images/vehicleType/mediumTank.svg") center/cover no-repeat ;
+            background: url('~@vehicle-type/mediumTank.svg') center/cover no-repeat ;
           }
-          &[data-type="SPG"]{
+          &[data-type='SPG']{
             height: 8px;
             width: 8px;
-            background: url("../assets/images/vehicleType/SPG.svg") center/cover no-repeat ;
+            background: url('~@vehicle-type/SPG.svg') center/cover no-repeat ;
           }
 
         }
 
         & h2 {
-          font-size: $fontSizeDescription_Product;
-          color: $fontColorDescription_Product;
+          font-size: s.$fontSizeDescription_Product;
+          color: c.$fontColorDescription_Product;
           font-weight: normal;
           margin-bottom: 15px;
-          @media screen and (max-device-width: $max-device-width) {
-            font-size: $fontSizeDescription_ProductAdapt;
+          @media screen and (max-device-width: s.$max-device-width) {
+            font-size: s.$fontSizeDescription_ProductAdapt;
           }
         }
       }
 
       .description_price {
         display: block;
-        font-size: $fontSizeDescription_price;
+        font-size: s.$fontSizeDescription_price;
         color: #d1b482;
-        @media screen and (max-device-width: $max-device-width) {
+        @media screen and (max-device-width: s.$max-device-width) {
           margin-left: 0;
-          font-size: $fontSizeDescription_priceAdapt;
+          font-size: s.$fontSizeDescription_priceAdapt;
         }
       }
 
-      @media screen and (max-device-width: $max-device-width) {
+      @media screen and (max-device-width: s.$max-device-width) {
         margin-left: 15px;
         margin-bottom: 15px;
       }
@@ -151,14 +152,14 @@
     position: absolute;
     bottom: -54px;
     text-transform: uppercase;
-    color: $fontColorWhite;
+    color: c.$fontColorWhite;
     border: none;
-    font-size: $fontSizeButtonPurchase;
+    font-size: s.$fontSizeButtonPurchase;
     cursor: pointer;
-    background-color: $colorButtonPurchase;
+    background-color: c.$colorButtonPurchase;
 
     &:hover {
-      border: 1px solid $colorBorderButtonPurchase;
+      border: 1px solid c.$colorBorderButtonPurchase;
     }
   }
 
@@ -169,16 +170,16 @@
     width: 37px;
     height: 33px;
     border: none;
-    font-size: 0px;
+    font-size: 0;
     cursor: pointer;
-    @media screen and (max-device-width: $max-device-width) {
+    @media screen and (max-device-width: s.$max-device-width) {
       transform: scale(0.7);
     }
 
   }
 
   .likeActive {
-    background: url("../assets/images/heart.svg") no-repeat center;
+    background: url('~@images/heart.svg') no-repeat center;
     @media (hover: hover) {
       &:hover {
         animation: heartRemove 1.5s infinite ease-in-out;
@@ -188,7 +189,7 @@
   }
 
   .likeNotActive {
-    background: url("../assets/images/heartB.svg") no-repeat;
+    background: url('~@images/heartB.svg') no-repeat;
     @media (hover: hover) {
       &:hover {
         animation: heartAdd 1.5s infinite ease-in-out;
@@ -260,9 +261,7 @@
   &.a.disabled {
     pointer-events: none;
   }
- /* &:hover .imgBG {
-    opacity: 1;
-  }*/
+  /* &:hover .imgBG {
+     opacity: 1;
+   }*/
 }
-
-

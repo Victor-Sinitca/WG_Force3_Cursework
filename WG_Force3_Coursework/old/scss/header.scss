@@ -1,4 +1,4 @@
-@import "variableMain";
+@import 'variableMain.css';
 
 .headerBody {
   height: $headerHeight;
@@ -38,7 +38,7 @@
     height: 23px;
     width: 23px;
     font-size: 0;
-    background-image: url('../assets/images/VectorSmartObject.svg');
+    background-image: url('../../src/assets/images/VectorSmartObject.svg');
     background-repeat: no-repeat;
   }
 
@@ -73,7 +73,7 @@
     text-decoration: none;
 
     &::before {
-      content: "Wishlist ";
+      content: 'Wishlist ';
       padding-right: 5px;
       padding-left: 5px;
       color: $fontColorHeader;
@@ -88,13 +88,13 @@
 
     @media screen and (max-device-width: $max-device-width) {
       &::after {
-        content: "";
+        content: '';
         display: inline-block;
 
         height: 14px;
         width: 16px;
         margin-left: 5px;
-        background-image: url("../assets/images/valentines-heart.png");
+        background-image: url('../../src/assets/images/valentines-heart.png');
         background-repeat: no-repeat;
       }
     }
@@ -108,7 +108,7 @@
     text-decoration: none;
 
     &::before {
-      content: "Shopping cart ";
+      content: 'Shopping cart ';
       margin-right: 5px;
       margin-left: 5px;
       color: $fontColorHeader;
@@ -119,11 +119,11 @@
     @media screen and (max-device-width: $max-device-width) {
       &::before {
         margin-left: 0px;
-        content: "";
+        content: '';
         display: inline-block;
         height: 16px;
         width: 16px;
-        background: url("../assets/images/cart.png") no-repeat;
+        background: url('../../src/assets/images/cart.png') no-repeat;
       }
     }
   }
@@ -148,12 +148,12 @@
         color:$fontColorHeaderActive;
       }
       @media screen and (max-device-width: $max-device-width) {
-        content: "";
+        content: '';
         display: inline-block;
         font-size: 0;
         height: 17px;
         width: 20px;
-        background: url("../assets/images/ico.png") no-repeat top ;
+        background: url('../../src/assets/images/ico.png') no-repeat top ;
       }
     }
 
