@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 
 app.use(`/api`, router)
-app.use(`/`,documentation)
+app.use(`/doc`,documentation)
 app.use(errorMiddleware) // !!должен быть последним middleware
 
 
