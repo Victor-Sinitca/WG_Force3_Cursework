@@ -4,8 +4,14 @@ const productController = require(`../controllers/product-controller`)
 
 const router = new Router()
 
+// GET /api/user/2
 router.get(`/user/:id`,userController.getUserData)
-router.get(`/productList?pageNumber?pageSize?filter`,productController.getProducts)
+// GET /api/productList?page=10&count=20&filter=all
+router.get(`/productList`,productController.getProducts)
+// GET /api/product/5
 router.get(`/product/:id`,productController.getOneProduct)
+
+router.post(`/user` , userController.setUserData)
+
 
 module.exports = router
