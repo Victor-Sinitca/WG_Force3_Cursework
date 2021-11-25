@@ -1,4 +1,4 @@
-import {moveProduct} from "@pages/main/moveProduct"
+import {moveProduct} from './moveProduct'
 
 
 const productData = [

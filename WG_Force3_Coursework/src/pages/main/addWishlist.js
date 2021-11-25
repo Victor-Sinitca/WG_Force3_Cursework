@@ -233,8 +233,8 @@ class Wishlist {
         const $product = document.createElement("div")
         $product.classList.add('product')
         $product.innerHTML = `
-                <a href="http://localhost:9000/item.html">
-                    <img class="imgBG" src="assets/images/Layer40.svg" alt="Танк">
+                <a href="./item.html">;
+                    <img class="imgBG" src=${require('@images/Layer40.svg')} alt="Танк">
                     <div class="description">
                         <div class="description_Product">
                             <span class="description_flag" data-country="${productData.productDescription.country}">

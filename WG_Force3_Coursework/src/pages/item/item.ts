@@ -1,3 +1,3 @@
 import './item.scss';
 
-import './addItem'
+import '../main/addItem'

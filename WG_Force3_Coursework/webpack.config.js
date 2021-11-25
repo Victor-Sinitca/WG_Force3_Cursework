@@ -9,7 +9,6 @@ module.exports = {
     index: resolve(src, 'pages/main', 'main.ts'),
     item: resolve(src, 'pages/item', 'item.ts'),
   },
-  // entry: resolve(src, 'pages/main', 'main.ts'),
   output: {
     filename: '[name].js',
     clean: true
@@ -43,11 +42,13 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: 'index.html',
       template: resolve(src, 'pages/main', 'main.html'),
+      chunks: ['index'],
       minify: true
     }),
     new HTMLWebpackPlugin({
       filename: 'item.html',
       template: resolve(src, 'pages/item', 'item.html'),
+      chunks: ['item'],
       minify: true
     }),
     new MiniCSSExtractPlugin({
