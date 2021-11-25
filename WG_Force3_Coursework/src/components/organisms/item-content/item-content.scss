@@ -1,0 +1,139 @@
+@use '~@scss-vars/colors' as c;
+@use '~@scss-vars/sizes' as s;
+
+.mainItemContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr auto;
+  align-content: start;
+  align-items: start;
+  margin-right: 15px;
+  margin-left: 15px;
+  /*align-items:start;*/
+  @media screen and (max-device-width: s.$max-device-width) {
+    grid-template-columns: 1fr;
+    padding-bottom: s.$bottomButtonHeightAdapt;
+  }
+
+
+  h2 {
+    display: grid;
+    font-size: s.$fontSizeNameItem;
+    line-height: s.$fontSizeNameItem*2;
+    letter-spacing: -0.05em;
+    margin: 0 0;
+    color: c.$fontColorWhite;
+    font-weight: normal;
+    /*white-space: nowrap;*/
+    text-transform: uppercase;
+    border-bottom: 1px solid #6b625c;
+    @media screen and (max-device-width: s.$max-device-width) {
+      align-items: center;
+      font-size: s.$fontSizeNameItemAdapt;
+      line-height: s.$fontSizeNameItemAdapt*2;
+    }
+  }
+
+  img {
+    width: 100%;
+    grid-row: span 2;
+    @media screen and (max-device-width: s.$max-device-width) {
+      grid-row: span 1;
+    }
+  }
+
+
+  .purchaseContainer {
+    display: flex;
+    flex-direction: column;
+
+    .priceItem {
+      display: flex;
+      align-items: center;
+      height: 90px;
+      font-size: s.$fontSizePriceItem;
+      color: #d1b482;
+      @media screen and (max-device-width: s.$max-device-width) {
+        height: auto;
+        justify-content: center;
+        width: 50%;
+        background-color: #232323;
+        font-size: s.$fontSizePriceItem;
+      }
+    }
+
+    .purchaseButton {
+      height: 60px;
+      width: 150px;
+      text-transform: uppercase;
+      color: c.$fontColorWhite;
+      border: none;
+      font-size: s.$fontSizeButtonPurchaseItem;
+      cursor: pointer;
+      background-color: c.$colorButtonPurchase;
+
+      &:hover {
+        border: 1px solid c.$colorBorderButtonPurchase;
+      }
+
+      &:active {
+        box-shadow: 0 0 2px 2px #c44303 inset, 0 0 1px 1px #c44303;
+      }
+
+      @media screen and (max-device-width: s.$max-device-width) {
+        height: 100%;
+        width: 50%;
+      }
+    }
+
+    @media screen and (max-device-width: s.$max-device-width) {
+      flex-direction: row;
+      height: s.$bottomButtonHeightAdapt;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  p {
+    grid-column: span 2;
+    font-size: s.$fontSizeDescriptionItem;
+    color: c.$fontColorDescriptionItem;
+    line-height: 30px;
+
+
+    &::before {
+      content: "Details";
+      font-size: 30px;
+      padding-bottom: 10px;
+      color: white;
+      display: block;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #6b625c;
+      @media screen and (max-device-width: s.$max-device-width) {
+        margin-bottom: 18px;
+
+      }
+
+    }
+
+    @media screen and (max-device-width: s.$max-device-width) {
+      grid-column: span 1;
+    }
+  }
+
+}
+//стиль устанавливается для анимации покупки продукта в addItem.js
+.moveProductItem {
+  position: fixed;
+  padding-bottom: 0;
+  opacity: 1;
+  transition: transform 1.5s, opacity 3s;
+  z-index: 2;
+
+  &:hover .imgBG {
+    opacity: 1;
+  }
+}

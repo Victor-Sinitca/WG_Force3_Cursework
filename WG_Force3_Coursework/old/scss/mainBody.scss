@@ -1,8 +1,8 @@
-@import "variableMain";
+@import 'variableMain.css';
 
 .mainBody {
   padding-top: $headerHeight;
-  background: url("../assets/images/bgimage.svg") no-repeat #1c1b15;
+  background: url('../../src/assets/images/bgimage.svg') no-repeat #1c1b15;
 
   @media screen and (max-device-width: $max-device-width) {
     padding-top: $headerHeightAdapt;
@@ -34,11 +34,11 @@
       height: 98px;
       width: 185px;
       font-size: 0px;
-      background: url("../assets/images/logo.svg") ;
+      background: url('../../src/assets/images/logo.svg') ;
       @media screen and (max-device-width: $max-device-width) {
         height: 24px;
         width: 30px;
-        background: url("../assets/images/LogoAlt.png") no-repeat;
+        background: url('../../src/assets/images/LogoAlt.png') no-repeat;
       }
     }
 
