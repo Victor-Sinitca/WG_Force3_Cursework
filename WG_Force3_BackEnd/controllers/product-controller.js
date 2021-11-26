@@ -14,7 +14,7 @@ class ProductController {
     async getProducts(req, res, next) {
         try {
             const query = req.query
-            console.log(`getOneProduct query:${JSON.stringify(query)}`)
+            /*console.log(`getOneProduct query:${JSON.stringify(query)}`)*/
             const {page,count,filter} = query
             const products = await productService.getProducts(page,count,filter)
             await res.json(products)
