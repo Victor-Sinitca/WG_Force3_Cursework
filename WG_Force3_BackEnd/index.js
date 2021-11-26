@@ -11,13 +11,15 @@ const app = express()
 app.use(express.json())
 
 app.use(`/api`, router)
+
+
 app.use(`/doc`,documentation)
 app.use(errorMiddleware) // !!должен быть последним middleware
 
 
 const start = async () => {
     try {
-        app.listen(PORT, () => console.log(`сервер стартанул порт: ${PORT}  http://localhost:${PORT}/`))
+        app.listen(PORT, () => console.log(`server was start on   http://localhost:${PORT}/  documentation http://localhost:${PORT}/doc `))
     } catch (e) {
         console.log(e)
     }

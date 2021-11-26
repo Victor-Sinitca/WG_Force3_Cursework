@@ -12,6 +12,8 @@ router.get(`/productList`,productController.getProducts)
 router.get(`/product/:id`,productController.getOneProduct)
 
 router.post(`/user` , userController.setUserData)
+router.post(`/user/wishlist` , userController.setUserWishlist)
+router.post(`/user/shopping` , userController.setUserShopping)
 
 
 module.exports = router
