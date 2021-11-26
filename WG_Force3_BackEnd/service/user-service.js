@@ -93,14 +93,14 @@ class UserService {
         let isUserFound = false
         let resultCode = 0
         const messages = []
-        let wishlis = []
+        let wishlist = []
         users.forEach(value => {
             if (value.userID === userID) {
                 isUserFound=true
                 const length=value.wishlist.length
                 value.wishlist = value.wishlist.filter(value => value !== productID)
                 if(value.wishlist.length === length) value.wishlist.push(productID)
-                wishlis=value.wishlist
+                wishlist=value.wishlist
             }
         })
         if(!isUserFound){
@@ -113,7 +113,7 @@ class UserService {
                 resultCode,
                 messages,
                 data: {
-                    wishlis
+                    wishlist
                 }
             }
         }
@@ -125,7 +125,7 @@ class UserService {
             resultCode,
             messages,
             data: {
-                wishlis
+                wishlist
             }
         }
     }
