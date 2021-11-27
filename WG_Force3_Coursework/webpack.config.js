@@ -56,7 +56,6 @@ module.exports = {
       filename: '[name].css'
     })
   ],
-
   module: {
     rules: [
       {
@@ -79,6 +78,16 @@ module.exports = {
               sourceMap: true,
             },
           },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  'postcss-preset-env'
+                ]
+              }
+            }
+          },
           'sass-loader',
         ],
       },
@@ -98,5 +107,4 @@ module.exports = {
       }
     ]
   }
-
 }
